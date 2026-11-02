@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-200 overflow-x-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* 1960s CRT Screen Effects */
+.crt-screen-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.crt-vignette {
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.85), inset 0 0 100px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+}
+
+/* Nixie Tube Glowing Digit Style */
+.nixie-tube {
+  background: radial-gradient(circle at center, #2e0f00 0%, #110500 80%, #080200 100%);
+  color: #ff8811;
+  text-shadow: 
+    0 0 4px #ff5500,
+    0 0 10px #ff7700,
+    0 0 20px #ff9900,
+    0 0 40px rgba(255, 120, 0, 0.8);
+  border: 1px solid #5a2000;
+  box-shadow: 
+    inset 0 0 12px rgba(255, 100, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.crt-green-text {
+  color: #22c55e;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.7), 0 0 16px rgba(34, 197, 94, 0.4);
+}
+
+.crt-amber-text {
+  color: #f59e0b;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.7), 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+.crt-red-text {
+  color: #ef4444;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 18px rgba(239, 68, 68, 0.5);
+}
+
+/* Vintage Chassis Screw */
+.vintage-screw {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #71717a, #3f3f46 60%, #18181b 100%);
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3), 1px 1px 2px rgba(0,0,0,0.8);
+  position: relative;
+}
+.vintage-screw::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: #18181b;
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* Vintage Brushed Aluminum Panel Styling */
+.brushed-aluminum {
+  background: linear-gradient(135deg, #27272a 0%, #1f1f23 50%, #27272a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    inset 1px 1px 0 rgba(255, 255, 255, 0.07),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.6),
+    0 8px 24px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom Vintage Potentiometer Range Slider */
+input[type="range"].potentiometer-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #18181b;
+  border-radius: 4px;
+  border: 1px solid #3f3f46;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+}
+
+input[type="range"].potentiometer-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #71717a 0%, #3f3f46 50%, #27272a 100%);
+  border: 1px solid #a1a1aa;
+  cursor: pointer;
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+input[type="range"].potentiometer-slider::-moz-range-thumb {
+  width: 22px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #71717a 0%, #3f3f46 50%, #27272a 100%);
+  border: 1px solid #a1a1aa;
+  cursor: pointer;
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Custom Scrollbar for Retro feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+  border: 1px solid #3f3f46;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
